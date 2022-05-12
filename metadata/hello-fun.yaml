@@ -6,9 +6,8 @@ metadata:
 spec:
   gitImplementation: go-git
   ignore: |-
-    !.gitattributes
-    !.gitignore
-    !.gitmodules
+    /*
+    !hello-fun
   interval: 10m0s
   ref:
     branch: main
