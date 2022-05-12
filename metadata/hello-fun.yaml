@@ -1,0 +1,16 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+  name: hello-fun-acc-xnknz
+  namespace: default
+spec:
+  gitImplementation: go-git
+  ignore: |-
+    !.gitattributes
+    !.gitignore
+    !.gitmodules
+  interval: 10m0s
+  ref:
+    branch: main
+  timeout: 20s
+  url: https://github.com/trisberg/sample-accelerators
