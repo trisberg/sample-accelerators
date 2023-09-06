@@ -1,0 +1,25 @@
+accelerator:
+  displayName: Mark Fynes Test
+  description: Demonstrates how to use the YTT transform and ReplaceText
+  iconUrl: https://raw.githubusercontent.com/sample-accelerators/icons/master/carvel-logo.png
+  tags:
+    - yaml
+    - ytt
+  options:
+    - name: greeting
+      label: Greeting
+      description: A sample option used to generate YAML.
+      defaultValue: Hello
+      display: true
+
+engine:
+  chain:
+  - merge: 
+    include: [ "**" ]
+    chain:
+    - type: ReplaceText
+      substitutions: 
+        text: foo
+        with: "'bar'"
+    - type: YTT
+      include: [ "fubar/x.yaml" ]
