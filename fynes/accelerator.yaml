@@ -18,8 +18,8 @@ engine:
     include: [ "**" ]
     chain:
     - type: ReplaceText
-      substitutions: 
-        text: foo
+      substitutions:
+      - text: foo
         with: "'bar'"
     - type: YTT
       include: [ "fubar/x.yaml" ]
