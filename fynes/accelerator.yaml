@@ -23,4 +23,4 @@ engine:
         with: "'bar'"
     - include: [ "values.yaml", "fubar/x.yaml" ]
       chain:
-        type: YTT
+      - type: YTT
