@@ -21,5 +21,6 @@ engine:
       substitutions:
       - text: foo
         with: "'bar'"
-    - type: YTT
-      include: [ "fubar/x.yaml" ]
+    - include: [ "values.yaml", "fubar/x.yaml" ]
+      chain:
+        type: YTT
