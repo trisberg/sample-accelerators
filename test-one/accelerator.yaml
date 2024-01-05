@@ -1,0 +1,46 @@
+accelerator:
+  displayName: Test One XYZ
+  description: A simple test
+
+  tags:
+  - tanzu
+
+  # options for the UI
+  options:
+  - name: comment
+    inputType: text
+    label: A Test Comment
+    defaultValue: Foo Bar
+
+engine:
+  merge:
+  - chain:
+    - exclude: [ "catalog/*.yaml" ]
+      applyTo: [ "README.md" ]
+      transformations:
+      - type: ReplaceText
+        substitutions:
+        - text: "Hello"
+          with: "#comment"
+  - chain:
+    - exclude: [ "catalog/*.yaml" ]
+      applyTo: [ "LICENSE" ]
+      transformations:
+      - type: ReplaceText
+        substitutions:
+        - text: "2022"
+          with: "'2023'"
+  - chain:
+    - exclude: [ "catalog/*.yaml" ]
+      transformations:
+      - type: ReplaceText
+        substitutions:
+        - text: "MANIFEST"
+          with: "'THIS IS SOME BOGUS TEXT'"
+        - text: "GRADLE_USER_HOME"
+          with: "'THIS_IS_SOME_BOGUS_HOME'"
+  # - chain:
+  #   - include: [ "gradle/**" ]
+  - chain:
+    - include: [ "catalog/catalog-info.yaml" ]
+  - type: Provenance
