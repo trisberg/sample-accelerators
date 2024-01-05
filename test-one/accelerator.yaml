@@ -38,9 +38,9 @@ engine:
         - text: "MANIFEST"
           with: "'THIS IS SOME BOGUS TEXT'"
         - text: "GRADLE_USER_HOME"
-          with: "'THIS_IS_SOME_BOGUS_HOME'"
-  # - chain:
-  #   - include: [ "gradle/**" ]
+          with: "THIS_IS_SOME_BOGUS_HOME"
+  - chain:
+    - include: [ "gradle/**" ]
   - chain:
     - include: [ "catalog/catalog-info.yaml" ]
   - type: Provenance
