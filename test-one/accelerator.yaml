@@ -30,15 +30,15 @@ engine:
         substitutions:
         - text: "2022"
           with: "'2023'"
-  - chain:
-    - exclude: [ "catalog/*.yaml" ]
-      transformations:
-      - type: ReplaceText
-        substitutions:
-        - text: "MANIFEST"
-          with: "'THIS IS SOME BOGUS TEXT'"
-        - text: "GRADLE_USER_HOME"
-          with: "THIS_IS_SOME_BOGUS_HOME"
+  # - chain:
+  #   - exclude: [ "catalog/*.yaml" ]
+  #     transformations:
+  #     - type: ReplaceText
+  #       substitutions:
+  #       - text: "MANIFEST"
+  #         with: "'THIS IS SOME BOGUS TEXT'"
+  #       - text: "GRADLE_USER_HOME"
+  #         with: "THIS_IS_SOME_BOGUS_HOME"
   - chain:
     - include: [ "gradle/**" ]
   - chain:
