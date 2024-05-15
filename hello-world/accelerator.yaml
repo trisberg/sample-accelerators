@@ -60,7 +60,7 @@ engine:
       chain:
       - type: ReplaceText
         substitutions:
-        - text: hello-world
+        - text: "hello-world"
           with: "#artifactId"
       - type: RewritePath
         rewriteTo: "'catalog/' + #filename"
@@ -69,8 +69,8 @@ engine:
       chain:
       - type: ReplaceText
         substitutions:
-        - text: hello-world
-          with: "#artifactId"
+        - text: "app.kubernetes.io/part-of: hello-world"
+          with: "'app.kubernetes.io/part-of: ' + #artifactId"
         - text: World
           with: "#message"
       - type: RewritePath

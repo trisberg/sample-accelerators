@@ -6,6 +6,10 @@ metadata:
     apps.tanzu.vmware.com/workload-type: web
     app.kubernetes.io/part-of: hello-world
 spec:
+  build:
+    env:
+      - name: BP_JVM_VERSION
+        value: "21"
   env:
   - name: APP_MESSAGE
     value: World
@@ -15,6 +19,7 @@ spec:
       autoscaling.knative.dev/minScale: "1"
   source:
     git:
-      url: https://github.com/sample-accelerators/hello-world
+      url: https://github.com/trisberg/sample-accelerators
       ref:
         branch: main
+    subPath: hello-world
